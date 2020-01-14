@@ -2,13 +2,13 @@ export default {
   /**
    * @description 配置显示在浏览器标签的title
    */
-  title: '健康中国晒出生活活动',
+  title: '阅读',
   /**
    * @description token在Cookie中存储的天数，默认1天
    */
   cookieExpires: 1,
   baseUrl: {
-    dev: 'http://10.20.1.76:9001',
+    dev: 'http://10.20.1.56:3000',
     pro: 'http://wap.jxlife.com.cn',
     tes: 'http://tweixin.jxlife.com.cn'
   },

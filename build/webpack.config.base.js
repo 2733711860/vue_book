@@ -3,6 +3,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+var webpack = require('webpack')
 
 const utils = require('./utils')
 
@@ -13,7 +14,8 @@ module.exports = {
       '@': utils.resolve('src'),
       '_c': utils.resolve('src/components'),
       '_a': utils.resolve('src/assets'),
-      'static': utils.resolve('../static')
+      'static': utils.resolve('../static'),
+      'jquery': 'jquery'
     }
   },
 
@@ -70,6 +72,10 @@ module.exports = {
       template: 'index.html',
       inject: true
     }),
+    new webpack.ProvidePlugin({
+　　　　jQuery: "jquery",
+　　　　$: "jquery"
+　　}),
     new VueLoaderPlugin(),
     new CopyWebpackPlugin([{
       from: utils.resolve('static/img'),

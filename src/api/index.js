@@ -24,9 +24,8 @@ switch (process.env.NODE_ENV) {
 export { baseUrl }
 export default {
   // **系统管理**开始
-  getData: baseUrl + '/getData',
-  getTableData: baseUrl + '/getTableData',
-  ckeckAttention: baseUrl + '/wap/api/customerFestival/judgeIsFollow.do', // 是否关注
-  getInfo: baseUrl + '/wap/activity/queryWinnPrizeInfo.do', // 中奖人员信息轮播
-  getJoinNum: baseUrl + '/wap/activity/checkUserPartTimes.do' // 活动参与次数
+  searchBook: baseUrl + '/searchBook',
+  getBookContent: baseUrl + '/getBookContent',
+  searchPageBook: baseUrl + '/searchPageBook',
+  getBookChapter: baseUrl + '/getBookChapter',
 }

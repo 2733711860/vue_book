@@ -44,7 +44,8 @@ export default class http {
     try {
       let res = await axios.get(params.api, { params: params.param || {} }, config)
       return new Promise((resolve, reject) => {
-        if (res.code === 200) {
+      	console.log(res)
+        if (res.status === 200) {
           resolve(res)
         } else {
           reject(res)
@@ -58,7 +59,7 @@ export default class http {
     try {
       let res = await axios.post(params.api, params.param, { headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' } }, config)
       return new Promise((resolve, reject) => {
-        if (res) {
+        if (res.status === 200) {
           resolve(res)
         } else {
           reject(res)
@@ -72,7 +73,7 @@ export default class http {
     try {
       let res = await axios.post(params.api, params.param, { headers: { 'Content-Type': 'application/json;charset=UTF-8' } }, config)
       return new Promise((resolve, reject) => {
-        if (res) {
+        if (res.status === 200) {
           resolve(res)
         } else {
           reject(res)
@@ -86,7 +87,7 @@ export default class http {
     try {
       let res = await axios.post(params.api, params.param, { headers: { 'Content-Type': 'multipart/form-data' } }, config)
       return new Promise((resolve, reject) => {
-        if (res) {
+        if (res.status === 200) {
           resolve(res)
         } else {
           reject(res)

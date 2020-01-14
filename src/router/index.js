@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import routes from './routers'
+import book from './book'
 import { setTitle } from '@/libs/util'
-// import config from '@/config'
-// const { homeName } = config
 Vue.use(Router)
 const router = new Router({
-  routes
+  routes: [
+    ...book
+  ]
 })
 router.afterEach(to => {
   setTitle(to, router.app)
